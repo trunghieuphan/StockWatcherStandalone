@@ -110,13 +110,13 @@ public class VniScrapper {
 
                 WebDriver driver = chromeDriver();
 
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(180));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
 
-                driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(180));
+                driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(120));
 
                 driver.manage().window().maximize();
 
-                driver.get(props.getProperty("FIRE_ANT_ACC_MANAGE"));
+                driver.get(props.getProperty("FIRE_ANT_PROFILE"));
 
                 WebElement txtUserName = driver.findElement(By.id("username"));
                 txtUserName.sendKeys(props.getProperty("FIRE_ANT_USER_NAME"));
