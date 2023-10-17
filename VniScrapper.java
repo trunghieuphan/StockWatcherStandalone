@@ -125,8 +125,8 @@ public class VniScrapper {
                 WebElement submitButton = driver.findElement(By.xpath("//form/fieldset/div[4]/button"));
                 submitButton.click();
 
-                killPopups(driver, By.xpath("//div[@id='step-0']//button[@data-role='end']"), 60);
-                killPopups(driver, By.xpath("//div[@class='modal-content']//button[@class='close']"), 60);
+                //killPopups(driver, By.xpath("//div[@id='step-0']//button[@data-role='end']"), 60);
+                //killPopups(driver, By.xpath("//div[@class='modal-content']//button[@class='close']"), 60);
 
                 for(String stockCode : stockList){
                     //Check if this stock already be scrapped?
