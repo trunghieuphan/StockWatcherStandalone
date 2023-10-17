@@ -110,9 +110,9 @@ public class VniScrapper {
 
                 WebDriver driver = chromeDriver();
 
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(90));
 
-                driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(120));
+                driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(90));
 
                 driver.manage().window().maximize();
 
@@ -125,8 +125,11 @@ public class VniScrapper {
                 WebElement submitButton = driver.findElement(By.xpath("//form/fieldset/div[4]/button"));
                 submitButton.click();
 
-                killPopups(driver, By.xpath("//div[@id='step-0']//button[@data-role='end']"), 20);
-                killPopups(driver, By.xpath("//div[@class='modal-content']//button[@class='close']"), 20);
+                driver.get(props.getProperty("FIRE_ANT_DASHBOARD"));
+                driver.navigate().refresh();
+
+                killPopups(driver, By.xpath("//div[@id='step-0']//button[@data-role='end']"), 30);
+                killPopups(driver, By.xpath("//div[@class='modal-content']//button[@class='close']"), 30);
 
                 for(String stockCode : stockList){
                     //Check if this stock already be scrapped?
