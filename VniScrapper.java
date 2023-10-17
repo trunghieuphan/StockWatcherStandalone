@@ -94,7 +94,7 @@ public class VniScrapper {
 
         LOGGER.log(Level.INFO, summary);
 
-        shutdownMachine();
+        //shutdownMachine();
     }
 
     private void seleniumScrapping(List<String> stockList) throws IOException {
@@ -267,6 +267,9 @@ public class VniScrapper {
             options.setHeadless(true);
             options.addArguments("--no-sandbox");
         }
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-dev-shm-usage");
+
         WebDriver driver = new ChromeDriver(options);
         //DevTools devTools = ((ChromeDriver) driver).getDevTools();
         //devTools.createSession();
