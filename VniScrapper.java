@@ -116,7 +116,7 @@ public class VniScrapper {
 
                 driver.manage().window().maximize();
 
-                driver.get(props.getProperty("FIRE_ANT_DASHBOARD"));
+                driver.get(props.getProperty("FIRE_ANT_ACC_MANAGE"));
 
                 WebElement txtUserName = driver.findElement(By.id("username"));
                 txtUserName.sendKeys(props.getProperty("FIRE_ANT_USER_NAME"));
